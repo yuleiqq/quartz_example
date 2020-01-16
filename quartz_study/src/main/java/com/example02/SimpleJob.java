@@ -21,11 +21,14 @@ public class SimpleJob implements Job {
 
     private static Logger log = LoggerFactory.getLogger(SimpleJob.class);
 
-
     public void execute(JobExecutionContext context) throws JobExecutionException {
-        JobKey jobKey = context.getJobDetail().getKey();
+        try {
+            JobKey jobKey = context.getJobDetail().getKey();
 
-        log.info("SimpleJob says "+ jobKey +" executing at " +new Date());
+            log.info("SimpleJob says "+ jobKey +" executing at " +new Date());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 }

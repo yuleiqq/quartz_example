@@ -13,3 +13,7 @@
    
 **4、Quartz 的API,Jobs和Triggers**  
    学习地址： https://blog.csdn.net/yulei_qq/article/details/103993484
+
+**5、关于Jobs和JobDetails 的细节**  
+   学习地址： https://blog.csdn.net/yulei_qq/article/details/104004572
+
