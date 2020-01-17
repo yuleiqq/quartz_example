@@ -24,4 +24,7 @@
    学习地址： https://blog.csdn.net/yulei_qq/article/details/104009702
            
 **8、CronTrigger介绍**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104013745   
+   学习地址： https://blog.csdn.net/yulei_qq/article/details/104013745
+   
+**9、CronTrigger 示例1**  
+   学习地址： https://blog.csdn.net/yulei_qq/article/details/104014843     
