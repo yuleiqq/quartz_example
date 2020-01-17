@@ -5,7 +5,9 @@ import org.quartz.impl.StdSchedulerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.sql.Time;
 import java.util.Date;
+import java.util.concurrent.TimeUnit;
 
 import static org.quartz.JobBuilder.newJob;
 import static org.quartz.SimpleScheduleBuilder.simpleSchedule;
@@ -91,6 +93,11 @@ public class SimpleTriggerExample {
 //                 .withSchedule(simpleSchedule().withIntervalInMinutes(5).withRepeatCount(20)).build();
 //         ft = sched.rescheduleJob(trigger.getKey(), trigger);
 //         log.info("job3 rescheduled to run at: " + ft);
+
+         TimeUnit.MINUTES.sleep(1);
+         //获取当前已经执行的任务个数
+         SchedulerMetaData metaData = sched.getMetaData();
+         log.info("Executed " + metaData.getNumberOfJobsExecuted() + " jobs.");
 
      }
 
