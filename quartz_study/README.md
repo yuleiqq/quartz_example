@@ -28,3 +28,6 @@
    
 **9、CronTrigger 示例1**  
    学习地址： https://blog.csdn.net/yulei_qq/article/details/104014843     
+   
+**10、CronTrigger 示例2 -- 绑定多个触发器**  
+   学习地址： https://blog.csdn.net/yulei_qq/article/details/104017484
