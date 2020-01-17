@@ -69,7 +69,6 @@ public class SimpleTriggerExample {
          ft = sched.scheduleJob(job, trigger);
          log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
                  + trigger.getRepeatInterval() / 1000 + " seconds");
-
          // 所有的任务已经被添加到调度器，但是任务都不会运行，直到调用start 方法之后.
          sched.start();
 
