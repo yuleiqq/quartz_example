@@ -21,6 +21,12 @@
         
         **6、关于Trigger的介绍**  
            学习地址： https://blog.csdn.net/yulei_qq/article/details/104009279
+           
+        **7、SimpleTrigger介绍**  
+           学习地址： https://blog.csdn.net/yulei_qq/article/details/104009702
+           
+        **8、CronTrigger介绍**  
+           学习地址： https://blog.csdn.net/yulei_qq/article/details/104013745
         
          
          
