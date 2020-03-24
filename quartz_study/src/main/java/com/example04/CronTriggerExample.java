@@ -38,7 +38,6 @@ public class CronTriggerExample {
                 .build();
 
         scheduler.scheduleJob(cronTrigger1);
-
         scheduler.start();
 
     }

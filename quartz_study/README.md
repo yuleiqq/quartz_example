@@ -37,3 +37,6 @@
 **12、Quartz 之 JobExecutionContext 解读**  
    学习地址： https://blog.csdn.net/yulei_qq/article/details/104091497
    
+**12、Quartz 之 Job参数 和 Job状态**  
+   学习地址：https://blog.csdn.net/yulei_qq/article/details/105077309
+   
