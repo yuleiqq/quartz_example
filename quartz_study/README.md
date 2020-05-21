@@ -40,3 +40,5 @@
 **13、Quartz 之 Job参数 和 Job状态**  
    学习地址：https://blog.csdn.net/yulei_qq/article/details/105077309
    
+**14、Quartz 之 Job Misfires**  
+   学习地址：https://blog.csdn.net/yulei_qq/article/details/106267529
