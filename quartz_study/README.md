@@ -42,3 +42,6 @@
    
 **14、Quartz 之 Job Misfires**  
    学习地址：https://blog.csdn.net/yulei_qq/article/details/106267529
+   
+**15、Quartz 之 处理Job 异常**  
+   学习地址：https://blog.csdn.net/yulei_qq/article/details/107257463
