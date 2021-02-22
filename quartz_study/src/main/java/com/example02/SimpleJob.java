@@ -13,7 +13,7 @@ import java.util.Date;
  * @author :  yulei
  * @data :  2020/1/16 8:30
  * @Version :  1.0
- *
+ * <p>
  * 定义一个简单的任务(Job)，该任务会在调度器(Scheduler)给其绑定触发器(Trigger)后执行
  **/
 
@@ -25,7 +25,7 @@ public class SimpleJob implements Job {
         try {
             JobKey jobKey = context.getJobDetail().getKey();
 
-            log.info("SimpleJob says "+ jobKey +" executing at " +new Date());
+            log.info("SimpleJob says " + jobKey + " executing at " + new Date());
         } catch (Exception e) {
             e.printStackTrace();
         }

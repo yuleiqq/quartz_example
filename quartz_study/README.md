@@ -1,47 +1,47 @@
 **项目描述：**  
-    本项目使用Quartz 2.3.0 版本， 具体如何使用，请按照顺序阅读下面链接.  
-                 
+本项目使用Quartz 2.3.0 版本， 具体如何使用，请按照顺序阅读下面链接.
+
 **1、Quartz 概念术语介绍**  
-     学习地址: https://blog.csdn.net/yulei_qq/article/details/52430690
+学习地址: https://blog.csdn.net/yulei_qq/article/details/52430690
 
 **2、Quartz 环境搭建并启动**  
-     学习地址：https://blog.csdn.net/yulei_qq/article/details/103924245
+学习地址：https://blog.csdn.net/yulei_qq/article/details/103924245
 
 **3、Quartz 的使用**  
-   学习地址：https://blog.csdn.net/yulei_qq/article/details/103990960
-   
+学习地址：https://blog.csdn.net/yulei_qq/article/details/103990960
+
 **4、Quartz 的API,Jobs和Triggers**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/103993484
+学习地址： https://blog.csdn.net/yulei_qq/article/details/103993484
 
 **5、关于Jobs和JobDetails 的细节**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104004572
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104004572
 
 **6、关于Trigger的介绍**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104009279
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104009279
+
 **7、SimpleTrigger介绍**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104009702
-           
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104009702
+
 **8、CronTrigger介绍**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104013745
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104013745
+
 **9、CronTrigger 示例1**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104014843     
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104014843
+
 **10、CronTrigger 示例2 -- 绑定多个触发器**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104017484
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104017484
+
 **11、Quartz 之 JobKey 源码解读**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104026098   
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104026098
+
 **12、Quartz 之 JobExecutionContext 解读**  
-   学习地址： https://blog.csdn.net/yulei_qq/article/details/104091497
-   
+学习地址： https://blog.csdn.net/yulei_qq/article/details/104091497
+
 **13、Quartz 之 Job参数 和 Job状态**  
-   学习地址：https://blog.csdn.net/yulei_qq/article/details/105077309
-   
+学习地址：https://blog.csdn.net/yulei_qq/article/details/105077309
+
 **14、Quartz 之 Job Misfires**  
-   学习地址：https://blog.csdn.net/yulei_qq/article/details/106267529
-   
+学习地址：https://blog.csdn.net/yulei_qq/article/details/106267529
+
 **15、Quartz 之 处理Job 异常**  
-   学习地址：https://blog.csdn.net/yulei_qq/article/details/107257463
+学习地址：https://blog.csdn.net/yulei_qq/article/details/107257463

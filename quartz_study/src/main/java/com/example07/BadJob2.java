@@ -32,12 +32,11 @@ public class BadJob2 implements Job {
      * Called by the <code>{@link org.quartz.Scheduler}</code> when a <code>{@link org.quartz.Trigger}</code>
      * fires that is associated with the <code>Job</code>.
      * </p>
-     * 
-     * @throws JobExecutionException
-     *           if there is an exception while executing the job.
+     *
+     * @throws JobExecutionException if there is an exception while executing the job.
      */
     public void execute(JobExecutionContext context)
-        throws JobExecutionException {
+            throws JobExecutionException {
         JobKey jobKey = context.getJobDetail().getKey();
         _log.info("---" + jobKey + " executing at " + new Date());
 
@@ -50,7 +49,7 @@ public class BadJob2 implements Job {
         } catch (Exception e) {
             _log.info("--- Error in job!");
             JobExecutionException e2 =
-                new JobExecutionException(e);
+                    new JobExecutionException(e);
             // Quartz will automatically unschedule
             // all triggers associated with this job
             // so that it does not run again

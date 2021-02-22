@@ -14,13 +14,13 @@ import org.slf4j.LoggerFactory;
 
 public class SchedulerTest {
 
-   public static Logger log = LoggerFactory.getLogger(SchedulerTest.class);
+    public static Logger log = LoggerFactory.getLogger(SchedulerTest.class);
 
     public static void main(String[] args) throws SchedulerException {
         //调度器
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
 
-        log.debug("调度器名称："+scheduler.getSchedulerName());
+        log.debug("调度器名称：" + scheduler.getSchedulerName());
 
         scheduler.start();
     }

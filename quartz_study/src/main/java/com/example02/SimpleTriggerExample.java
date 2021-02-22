@@ -17,60 +17,60 @@ import static org.quartz.TriggerBuilder.newTrigger;
  * @author :  yulei
  * @data :  2020/1/16 8:36
  * @Version :  1.0
- *
+ * <p>
  * 这个示例将演示使用简单触发器实现Quartz的所有基本调度功能
  **/
 
 public class SimpleTriggerExample {
 
-     Logger log = LoggerFactory.getLogger(SimpleTriggerExample.class);
+    Logger log = LoggerFactory.getLogger(SimpleTriggerExample.class);
 
-     public void run () throws Exception {
+    public void run() throws Exception {
 
-         log.info("------- Initializing -------------------");
-         // 实例化调度器
-         SchedulerFactory sf = new StdSchedulerFactory();
-         Scheduler sched = sf.getScheduler();
-         log.info("------- Initialization Complete --------");
+        log.info("------- Initializing -------------------");
+        // 实例化调度器
+        SchedulerFactory sf = new StdSchedulerFactory();
+        Scheduler sched = sf.getScheduler();
+        log.info("------- Initialization Complete --------");
 
-         log.info("------- Scheduling Jobs ----------------");
+        log.info("------- Scheduling Jobs ----------------");
 
-         //可以在调用sched.start() 之前 调用jobs
-         //定义任务的执行时间
-         Date startTime = DateBuilder.nextGivenSecondDate(null, 15);
+        //可以在调用sched.start() 之前 调用jobs
+        //定义任务的执行时间
+        Date startTime = DateBuilder.nextGivenSecondDate(null, 15);
 
-         /** job1**/
-         //job1 只会执行一次
-         JobDetail job = newJob(SimpleJob.class).withIdentity("job1", "group1").build();
+        /** job1**/
+        //job1 只会执行一次
+        JobDetail job = newJob(SimpleJob.class).withIdentity("job1", "group1").build();
 
-         //定义一个触发器
-         SimpleTrigger trigger = (SimpleTrigger) newTrigger().withIdentity("trigger1", "group1").startAt(startTime).build();
+        //定义一个触发器
+        SimpleTrigger trigger = (SimpleTrigger) newTrigger().withIdentity("trigger1", "group1").startAt(startTime).build();
 
-         //使用调度器将job1 和 trigger1 绑定起来，并运行 .
-         Date ft = sched.scheduleJob(job, trigger);
-         log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
-                 + trigger.getRepeatInterval() / 1000 + " seconds");
+        //使用调度器将job1 和 trigger1 绑定起来，并运行 .
+        Date ft = sched.scheduleJob(job, trigger);
+        log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
+                + trigger.getRepeatInterval() / 1000 + " seconds");
 
-         /** job2**/
-         //job2 和job1 一样，归属在同一个组中
-         job = newJob(SimpleJob.class).withIdentity("job2", "group1").build();
-         trigger = (SimpleTrigger) newTrigger().withIdentity("trigger2", "group1").startAt(startTime).build();
+        /** job2**/
+        //job2 和job1 一样，归属在同一个组中
+        job = newJob(SimpleJob.class).withIdentity("job2", "group1").build();
+        trigger = (SimpleTrigger) newTrigger().withIdentity("trigger2", "group1").startAt(startTime).build();
 
-         ft = sched.scheduleJob(job, trigger);
-         log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
-                 + trigger.getRepeatInterval() / 1000 + " seconds");
+        ft = sched.scheduleJob(job, trigger);
+        log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
+                + trigger.getRepeatInterval() / 1000 + " seconds");
 
-         /***job3***/
-         //运行11次 (1次立即运行；之后，每个10秒运行一次,共10次)
-         job = newJob(SimpleJob.class).withIdentity("job3", "group1").build();
-         trigger = newTrigger().withIdentity("trigger3", "group1").startAt(startTime)
-                 .withSchedule(simpleSchedule().withIntervalInSeconds(10).withRepeatCount(10)).build();
+        /***job3***/
+        //运行11次 (1次立即运行；之后，每个10秒运行一次,共10次)
+        job = newJob(SimpleJob.class).withIdentity("job3", "group1").build();
+        trigger = newTrigger().withIdentity("trigger3", "group1").startAt(startTime)
+                .withSchedule(simpleSchedule().withIntervalInSeconds(10).withRepeatCount(10)).build();
 
-         ft = sched.scheduleJob(job, trigger);
-         log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
-                 + trigger.getRepeatInterval() / 1000 + " seconds");
-         // 所有的任务已经被添加到调度器，但是任务都不会运行，直到调用start 方法之后.
-         sched.start();
+        ft = sched.scheduleJob(job, trigger);
+        log.info(job.getKey() + " will run at: " + ft + " and repeat: " + trigger.getRepeatCount() + " times, every "
+                + trigger.getRepeatInterval() / 1000 + " seconds");
+        // 所有的任务已经被添加到调度器，但是任务都不会运行，直到调用start 方法之后.
+        sched.start();
 
 //         //在sched.start() 之后，jobs 仍然可以被调用.
 //         job = newJob(SimpleJob.class).withIdentity("job4", "group1").build();
@@ -93,12 +93,12 @@ public class SimpleTriggerExample {
 //         ft = sched.rescheduleJob(trigger.getKey(), trigger);
 //         log.info("job3 rescheduled to run at: " + ft);
 
-         TimeUnit.MINUTES.sleep(1);
-         //获取当前已经执行的任务个数
-         SchedulerMetaData metaData = sched.getMetaData();
-         log.info("Executed " + metaData.getNumberOfJobsExecuted() + " jobs.");
+        TimeUnit.MINUTES.sleep(1);
+        //获取当前已经执行的任务个数
+        SchedulerMetaData metaData = sched.getMetaData();
+        log.info("Executed " + metaData.getNumberOfJobsExecuted() + " jobs.");
 
-     }
+    }
 
 
     public static void main(String[] args) throws Exception {
@@ -106,7 +106,6 @@ public class SimpleTriggerExample {
         SimpleTriggerExample example = new SimpleTriggerExample();
         example.run();
     }
-
 
 
 }

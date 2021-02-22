@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.util.Date;
 
 /**
- * @author  yulei
+ * @author yulei
  */
 
 public class SimpleJob implements Job {
@@ -25,7 +25,7 @@ public class SimpleJob implements Job {
 
         JobDataMap jobDataMap = context.getMergedJobDataMap();
 
-        log.info("name: "+jobDataMap.getString("name")+", email: "+jobDataMap.getString("email"));
+        log.info("name: " + jobDataMap.getString("name") + ", email: " + jobDataMap.getString("email"));
         log.info("SimpleJob says: " + jobKey + " executing at " + new Date());
     }
 

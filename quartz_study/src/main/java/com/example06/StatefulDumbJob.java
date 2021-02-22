@@ -11,7 +11,7 @@ import java.util.Date;
  **/
 @PersistJobDataAfterExecution
 @DisallowConcurrentExecution
-public class StatefulDumbJob  implements Job {
+public class StatefulDumbJob implements Job {
 
     //执行次数累计
     public static final String NUM_EXECUTIONS = "NumExecutions";

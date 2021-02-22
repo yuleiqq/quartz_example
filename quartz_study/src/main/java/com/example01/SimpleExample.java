@@ -21,9 +21,9 @@ import static org.quartz.TriggerBuilder.newTrigger;
 
 public class SimpleExample {
 
-    private   Logger log = LoggerFactory.getLogger(SchedulerTest.class);
+    private Logger log = LoggerFactory.getLogger(SchedulerTest.class);
 
-    public void  run () throws Exception {
+    public void run() throws Exception {
         //实例化调度器
         Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();
 
@@ -57,7 +57,7 @@ public class SimpleExample {
 
 
     public static void main(String[] args) throws Exception {
-        SimpleExample  simpleExample = new SimpleExample();
+        SimpleExample simpleExample = new SimpleExample();
         simpleExample.run();
 
     }

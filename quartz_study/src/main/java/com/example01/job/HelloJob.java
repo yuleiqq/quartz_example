@@ -15,7 +15,7 @@ import java.util.Date;
  * @Version :  1.0
  **/
 
-public class HelloJob  implements Job {
+public class HelloJob implements Job {
     private static Logger log = LoggerFactory.getLogger(HelloJob.class);
 
     public void execute(JobExecutionContext context) throws JobExecutionException {
