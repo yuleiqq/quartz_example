@@ -20,10 +20,10 @@ public class MyAsyncExceptionHandler  implements AsyncUncaughtExceptionHandler {
     public void handleUncaughtException(Throwable throwable, Method method, Object... objects) {
 
         logger.error("----统一捕获线程异常信息----");
-        logger.error("异常信息: " + throwable.getMessage());
+        logger.error("异常信息: " + throwable.getMessage()+": "+throwable.getCause());
         logger.error("方法名: " + method.getName());
         for (Object param : objects) {
-            logger.error("异常参数值: " + param);
+            logger.error("方法参数: " + param);
         }
 
     }

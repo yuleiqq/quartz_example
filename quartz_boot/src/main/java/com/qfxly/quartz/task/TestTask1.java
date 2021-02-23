@@ -18,13 +18,13 @@ public class TestTask1 {
 
     @Scheduled(cron = "0/10 * * * * ?")
     @Async
-    public void method1()  {
+    public void method1( )  {
         try {
             logger.debug("method1: ");
             int a = 20/0;
         }catch (Exception e){
             e.printStackTrace();
-            throw new RuntimeException("hahahs");
+            throw new RuntimeException("数值异常",e);
         }
 
     }
