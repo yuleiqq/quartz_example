@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration  scan="true" scanPeriod="60 seconds" debug="false">
+    <contextName>logback</contextName>
+    <property name="log.path" value="D:/log" />
+
+    <!--输出到控制台-->
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%highlight([%-5level]) [%d{yyyy-MM-dd HH:mm:ss:SSS}] %green([%thread]) %boldMagenta(%logger{100}) ****===**** %n %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+    <appender name="file-info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/ddos-bill.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ddos-bill.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%-5level] [%d{yyyy-MM-dd HH:mm:ss:SSS}] [%thread] %logger{100} ****===**** %n %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+
+    <!--定时日志输出位置-->
+    <appender name="file-quartz-info" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${log.path}/ddos-bill-quartz.log</file>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>DENY</onMatch>
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${log.path}/ddos-bill-quartz.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+        </rollingPolicy>
+        <encoder>
+            <pattern>[%-5level] [%d{yyyy-MM-dd HH:mm:ss:SSS}] [%thread] %logger{100} ****===**** %n %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+    </appender>
+
+
+    
+    <appender name="file-error" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/logback-error.log</file>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/logback-error.%d{yyyy-MM-dd}.log</fileNamePattern>
+            <maxHistory>1</maxHistory>
+		</rollingPolicy>
+		<encoder>
+            <pattern>[%-5level] [%d{yyyy-MM-dd HH:mm:ss:SSS}] [%thread] %logger{100} ****===**** %n %msg%n</pattern>
+            <charset>utf8</charset>
+        </encoder>
+	</appender>
+
+    <logger name="com.qfxly.quartz" level="DEBUG">
+        <appender-ref ref="file-quartz-info" />
+        <appender-ref ref="file-error" />
+    </logger>
+
+    <!--SQL日志打印-->
+    <logger name="jdbc.sqlonly" level="INFO" additivity="false"/>
+    <logger name="jdbc.resultset" level="INFO" additivity="false"/>
+    <logger name="jdbc.connection" level="INFO" additivity="false"/>
+    <logger name="jdbc.audit" level="INFO" additivity="false"/>
+    <logger name="jdbc.sqltiming" level="INFO"/>
+
+    <logger name="org.springframework.jdbc.core.BeanPropertyRowMapper" level="OFF" />
+ 
+    <root level="DEBUG">
+        <appender-ref ref="console" />
+        <appender-ref ref="file-info" />
+        <appender-ref ref="file-error" />
+    </root>
+
+</configuration>
