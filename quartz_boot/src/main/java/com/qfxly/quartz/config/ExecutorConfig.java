@@ -17,10 +17,10 @@ public class ExecutorConfig implements AsyncConfigurer {
     @Bean
     public Executor getAsyncExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
-        executor.setThreadNamePrefix("MyAsync-");
+        executor.setThreadNamePrefix("MyAsync-pool-");
         executor.setMaxPoolSize(20);
         executor.setCorePoolSize(15);
-        executor.setQueueCapacity(10);
+        executor.setQueueCapacity(100);
         executor.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
         return executor;
     }
@@ -29,6 +29,5 @@ public class ExecutorConfig implements AsyncConfigurer {
     public AsyncUncaughtExceptionHandler getAsyncUncaughtExceptionHandler() {
         return new MyAsyncExceptionHandler();
     }
-
 
 }

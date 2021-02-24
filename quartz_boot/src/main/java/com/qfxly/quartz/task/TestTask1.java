@@ -16,7 +16,7 @@ public class TestTask1 {
 
     private static Logger logger = LoggerFactory.getLogger(TestTask1.class);
 
-    @Scheduled(cron = "0/10 * * * * ?")
+//    @Scheduled(cron = "0/10 * * * * ?")
     @Async
     public void method1( )  {
         try {
@@ -29,10 +29,16 @@ public class TestTask1 {
 
     }
 
-    @Scheduled(cron = "0/10 * * * * ?")
+//    @Scheduled(cron = "0/10 * * * * ?")
     @Async
     public void method2(){
         logger.debug("method2: ");
+
+    }
+
+
+    @Async
+    public void method3(String name){
 
     }
 
